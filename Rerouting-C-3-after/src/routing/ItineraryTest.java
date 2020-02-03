@@ -2,6 +2,7 @@ package routing;
 
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -28,6 +29,31 @@ public class ItineraryTest {
         new Leg("LGB", "DAL"));
     assertThat(original, is(expectedUnmodified));
   }
+
+  @Test
+  public void editingInputListIsProtected() {
+    // A value object must be created whole.
+    final List<Leg> legs = new ArrayList<>();
+    legs.add(new Leg("HKG", "LGB"));
+    legs.add(new Leg("LGB", "DAL"));
+    final Itinerary itin = new Itinerary(legs);
+    assertThat(itin.legs().size(), is(2));
+
+    legs.add(new Leg("DAL", "STO"));
+    assertThat(itin.legs().size(), is(2));
+    assertThat(legs.size(), is(3));
+  }
+
+  @Test(expected = UnsupportedOperationException.class)
+  public void returnedLegsUnmodifiable() {
+    // A value object must be created whole.
+    final List<Leg> legs =
+        new ArrayList<>(List.of(new Leg("HKG", "LGB"),
+            new Leg("LGB", "DAL")));
+    final Itinerary itin = new Itinerary(legs);
+    itin.legs().add(new Leg("DAL", "STO"));
+  }
+
 
   @Test
   public void extendedOn() {
