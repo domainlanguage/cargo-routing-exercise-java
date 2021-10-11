@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="Rerouting_Acme_Routing_Co" />
     <orderEntry type="library" name="lib" level="project" />
+    <orderEntry type="module" module-name="Rerouting_Acme_Routing_Co" />
   </component>
 </module>

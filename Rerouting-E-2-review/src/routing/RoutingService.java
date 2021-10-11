@@ -8,7 +8,7 @@ import java.util.stream.IntStream;
 
 public class RoutingService {
 
-  class AcmeRoutingToOpusTranslator() {
+  class AcmeRoutingToOpusTranslator {
     public Itinerary translate(String acmeRoute) {
       final String[] locations = route.split(",");
 
