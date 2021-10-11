@@ -8,22 +8,12 @@ public class RoutingService {
   OpusRoutingAdapter routingAdapter = new OpusRoutingAdapter();
 
   public void route(Cargo cargo) {
-      routingAdapter.route(cargo);
+    routingAdapter.route(cargo);
   }
 
   public void reroute(Cargo cargo, String reroutePoint) {
-    Itinerary itinerary = cargo.getItinerary();
-    List<Leg> legs = new ArrayList<>();
-    legs.addAll(cargo.getItinerary().getLegs());
 
-    AtomicBoolean pastReroutePoint = new AtomicBoolean(false);
-
-    legs.forEach(l -> {
-          if (l.getStart().equals(reroutePoint))
-            pastReroutePoint.set(true);
-          if (pastReroutePoint.get()) cargo.getItinerary().remove(l);
-        }
-    );
+    cargo.getItinerary().truncateAt(reroutePoint);
 
     Cargo tempCargo = new Cargo();
     tempCargo.setOrigin(reroutePoint);
