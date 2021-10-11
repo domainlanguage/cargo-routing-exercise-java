@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-A-2-test/Rerouting-A-2-test.iml" filepath="$PROJECT_DIR$/Rerouting-A-2-test/Rerouting-A-2-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-A-3-review/Rerouting-A-3-review.iml" filepath="$PROJECT_DIR$/Rerouting-A-3-review/Rerouting-A-3-review.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-A-after/Rerouting-A-after.iml" filepath="$PROJECT_DIR$/Rerouting-A-after/Rerouting-A-after.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-A-before/Rerouting-A-before.iml" filepath="$PROJECT_DIR$/Rerouting-A-before/Rerouting-A-before.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-B-1-before/Rerouting-B-1-before.iml" filepath="$PROJECT_DIR$/Rerouting-B-1-before/Rerouting-B-1-before.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-B-2-test/Rerouting-B-2-test.iml" filepath="$PROJECT_DIR$/Rerouting-B-2-test/Rerouting-B-2-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-B-3-refactor/Rerouting-B-3-refactor.iml" filepath="$PROJECT_DIR$/Rerouting-B-3-refactor/Rerouting-B-3-refactor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-B-4-after/Rerouting-B-4-after.iml" filepath="$PROJECT_DIR$/Rerouting-B-4-after/Rerouting-B-4-after.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-B-before/Rerouting-B-before.iml" filepath="$PROJECT_DIR$/Rerouting-B-before/Rerouting-B-before.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-C-1-before/Rerouting-C-1-before.iml" filepath="$PROJECT_DIR$/Rerouting-C-1-before/Rerouting-C-1-before.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-C-2a-test/Rerouting-C-2a-test.iml" filepath="$PROJECT_DIR$/Rerouting-C-2a-test/Rerouting-C-2a-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-C-2b-test/Rerouting-C-2b-test.iml" filepath="$PROJECT_DIR$/Rerouting-C-2b-test/Rerouting-C-2b-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-C-3-after/Rerouting-C-3-after.iml" filepath="$PROJECT_DIR$/Rerouting-C-3-after/Rerouting-C-3-after.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-D-1-before/Rerouting-D-1-before.iml" filepath="$PROJECT_DIR$/Rerouting-D-1-before/Rerouting-D-1-before.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-D-2-test/Rerouting-D-2-test.iml" filepath="$PROJECT_DIR$/Rerouting-D-2-test/Rerouting-D-2-test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-D-3-after/Rerouting-D-3-after.iml" filepath="$PROJECT_DIR$/Rerouting-D-3-after/Rerouting-D-3-after.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-E-1-before/Rerouting-E-1-before.iml" filepath="$PROJECT_DIR$/Rerouting-E-1-before/Rerouting-E-1-before.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting-E-2-review/Rerouting-E-2-review.iml" filepath="$PROJECT_DIR$/Rerouting-E-2-review/Rerouting-E-2-review.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Rerouting_Acme_Routing_Co/Rerouting_Acme_Routing_Co.iml" filepath="$PROJECT_DIR$/Rerouting_Acme_Routing_Co/Rerouting_Acme_Routing_Co.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/cargo-routing-exercise-java.iml" filepath="$PROJECT_DIR$/.idea/cargo-routing-exercise-java.iml" />
+    </modules>
+  </component>
+</project>
