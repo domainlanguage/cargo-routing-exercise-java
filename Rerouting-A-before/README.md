@@ -59,3 +59,7 @@ In class, we talked about some missing concepts in the domain model. Please:
 Run the tests before and after.
 
 Reflect: how would you make this more clear if you were changing the function's interface?
+
+## Moving on
+
+After another day of class, continue with [Exercise A2](./exercise2.md)
