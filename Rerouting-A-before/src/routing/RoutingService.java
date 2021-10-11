@@ -8,7 +8,8 @@ public class RoutingService {
   OpusRoutingAdapter routingAdapter = new OpusRoutingAdapter();
 
   public void route(Cargo cargo) {
-      routingAdapter.route(cargo);
+    Itinerary itinerary = routingAdapter.route(cargo.getOrigin(), cargo.getDestination());
+    cargo.setItinerary(itinerary);
   }
 
   public void reroute(Cargo cargo, String reroutePoint) {
@@ -28,7 +29,7 @@ public class RoutingService {
     Cargo tempCargo = new Cargo();
     tempCargo.setOrigin(reroutePoint);
     tempCargo.setDestination(cargo.getDestination());
-    routingAdapter.route(tempCargo);
+    route(tempCargo);
     tempCargo.getItinerary().getLegs().forEach(cargo.getItinerary()::add);
   }
 }

@@ -11,15 +11,14 @@ import java.util.stream.IntStream;
  * It is maintained by the Routing team.
  */
 public class OpusRoutingAdapter {
-  public void route(Cargo cargo) {
-    String origin = cargo.getOrigin();
-    String destination = cargo.getDestination();
+  public Itinerary route(String origin, String destination) {
 
     String route = AcmeRoutingService.getRoute(origin, destination);
     String[] locations = route.split(",");
 
-    cargo.setItinerary(new Itinerary());
+    Itinerary itinerary = new Itinerary();
     IntStream.range(1, locations.length).forEach(
-        i -> cargo.getItinerary().add(new Leg(locations[i - 1], locations[i])));
+        i -> itinerary.add(new Leg(locations[i - 1], locations[i])));
+    return itinerary;
   }
 }
