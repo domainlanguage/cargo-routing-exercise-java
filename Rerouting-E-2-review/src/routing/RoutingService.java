@@ -7,14 +7,20 @@ import java.util.List;
 import java.util.stream.IntStream;
 
 public class RoutingService {
-  public Itinerary findRoute(final String origin, final String destination) {
-    final String route = AcmeRoutingService.getRoute(origin, destination);
-    final String[] locations = route.split(",");
 
-    final List<Leg> legs = new ArrayList<>();
-    IntStream.range(1, locations.length)
-        .forEach(i -> legs.add(new Leg(locations[i - 1], locations[i])));
-    return new Itinerary(legs);
+  class AcmeRoutingToOpusTranslator() {
+    public Itinerary translate(String acmeRoute) {
+      final String[] locations = route.split(",");
+
+      final List<Leg> legs = new ArrayList<>();
+      IntStream.range(1, locations.length)
+          .forEach(i -> legs.add(new Leg(locations[i - 1], locations[i])));
+      return new Itinerary(legs);
+    }
+  }
+
+  public Itinerary findRoute(final String origin, final String destination) {
+    return new AcmeRoutingToOpusTranslator().translate(AcmeRoutingService.getRoute(origin, destination));
   }
 
   public Itinerary findReroute(final Itinerary initial, final String reroutePoint, final String newDestination) {

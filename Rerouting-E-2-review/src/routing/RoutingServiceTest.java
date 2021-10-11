@@ -26,12 +26,23 @@ public class RoutingServiceTest {
   }
 
   @Test
+  public void initialRouting2LegsV2() {
+    final Itinerary expected = new Itinerary(
+        new Leg("HKG", "LGB"),
+        new Leg("LGB", "DAL"));
+
+    final RoutingService service = new RoutingService();
+    assertThat(service.findRoute("HKG", "DAL"), is(expected));
+  }
+
+  @Test
   public void initialRouting2Legs() {
     final Itinerary expected = new Itinerary(
         new Leg("HKG", "LGB"),
         new Leg("LGB", "DAL"));
 
     final RoutingService service = new RoutingService();
+    final RoutingSpecification spec = new RoutingSpecification("HKG", "DAL");
     assertThat(service.findRoute("HKG", "DAL"), is(expected));
   }
 

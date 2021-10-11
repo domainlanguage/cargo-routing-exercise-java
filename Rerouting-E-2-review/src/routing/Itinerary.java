@@ -84,4 +84,5 @@ public final class Itinerary {
   public int hashCode() {
     return Objects.hash(legs);
   }
+
 }

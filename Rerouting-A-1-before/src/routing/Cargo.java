@@ -1,8 +1,8 @@
 package routing;
 
 public class Cargo {
-  String origin;
-  String destination;
+  private String origin;
+  private String destination;
 
   private Itinerary itinerary = new Itinerary();
 

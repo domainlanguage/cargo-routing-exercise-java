@@ -8,17 +8,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.stream.IntStream;
 
 public class RoutingService {
-  public void route(Cargo cargo) {
-    String origin = cargo.getOrigin();
-    String destination = cargo.getDestination();
-
-    String route = AcmeRoutingService.getRoute(origin, destination);
-    String[] locations = route.split(",");
-
-    cargo.setItinerary(new Itinerary());
-    IntStream.range(1, locations.length).forEach(
-        i -> cargo.getItinerary().add(new Leg(locations[i - 1], locations[i])));
-  }
+  OpusRoutingAdapter routingAdapter = new OpusRoutingAdapter();
 
   public void reroute(Cargo cargo, String reroutePoint) {
     Itinerary itinerary = cargo.getItinerary();
@@ -37,7 +27,7 @@ public class RoutingService {
     Cargo tempCargo = new Cargo();
     tempCargo.setOrigin(reroutePoint);
     tempCargo.setDestination(cargo.getDestination());
-    route(tempCargo);
+    routingAdapter.route(tempCargo);
     tempCargo.getItinerary().getLegs().forEach(cargo.getItinerary()::add);
   }
 }
