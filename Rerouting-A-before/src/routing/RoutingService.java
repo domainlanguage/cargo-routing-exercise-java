@@ -1,11 +1,8 @@
 package routing;
 
-import acmeroutingco.AcmeRoutingService;
-
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.stream.IntStream;
 
 public class RoutingService {
   OpusRoutingAdapter routingAdapter = new OpusRoutingAdapter();
