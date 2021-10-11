@@ -1,10 +1,12 @@
-
 package routing;
 
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertTrue;
 
 public class RoutingServiceTest {
   @Test
@@ -35,17 +37,36 @@ public class RoutingServiceTest {
 
   @Test
   public void rerouting() {
-    Cargo cargo = new Cargo();
+    final Cargo cargo = new Cargo();
     cargo.setOrigin("HKG");
-    cargo.setDestination("DAL");
-    RoutingService service = new RoutingService();
-    service.route(cargo);
-    cargo.setDestination("SEA");
+    cargo.setDestination("SEA"); // new destination
+    cargo.getItinerary().add(new Leg("HKG", "LGB"));
+    cargo.getItinerary().add(new Leg("LGB", "DAL"));
+
+    final RoutingService service = new RoutingService();
     service.reroute(cargo, "LGB");
-    assertThat(cargo.getItinerary().getLegs().size(), is(2));
+
+    // Post condition: itinerary is preserved up to reroute point
     assertThat(cargo.getItinerary().getLegs().get(0).getStart(), is("HKG"));
     assertThat(cargo.getItinerary().getLegs().get(0).getEnd(), is("LGB"));
-    assertThat(cargo.getItinerary().getLegs().get(1).getStart(), is("LGB"));
-    assertThat(cargo.getItinerary().getLegs().get(1).getEnd(), is("SEA"));
+
+    // Post condition: itinerary ends at new destination
+    final int itinLength = cargo.getItinerary().getLegs().size();
+    assertThat(cargo.getItinerary().getLegs().get(itinLength - 1).getEnd(), is("SEA"));
+
+    // Post condition: itinerary is connected
+    final List<Leg> legs = cargo.getItinerary().getLegs();
+    boolean isConnected = true;
+    if (legs.size() >= 2) {
+      for (int i = 1; i < legs.size(); i++) {
+        final Leg left = legs.get(i - 1);
+        final Leg right = legs.get(i);
+        if (!left.getEnd().equals(right.getStart())) {
+          isConnected = false;
+          break;
+        }
+      }
+    }
+    assertTrue(isConnected);
   }
 }
