@@ -10,6 +10,10 @@ import java.util.stream.IntStream;
 public class RoutingService {
   OpusRoutingAdapter routingAdapter = new OpusRoutingAdapter();
 
+  public void route(Cargo cargo) {
+      routingAdapter.route(cargo);
+  }
+
   public void reroute(Cargo cargo, String reroutePoint) {
     Itinerary itinerary = cargo.getItinerary();
     List<Leg> legs = new ArrayList<>();
